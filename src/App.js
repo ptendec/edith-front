@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import {useDispatch} from "react-redux"
+import AppRouter from "./components/AppRouter/AppRouter"
+import jwt_decode from "jwt-decode";
+import {setAdmin} from "./store/admin/reducer"
+import Header from "./components/Header/Header"
 
 function App() {
+  const dispatch = useDispatch()
+  if (localStorage.getItem('accessToken')) {
+    const decoded = jwt_decode(localStorage.getItem('accessToken'))
+    dispatch(setAdmin({...decoded}))
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppRouter/>
     </div>
-  );
+  )
 }
 
 export default App;

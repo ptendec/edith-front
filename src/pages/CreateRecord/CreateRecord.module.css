@@ -1,0 +1,150 @@
+.createRecord{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+h2, h3{
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.salons{
+  padding-top: 50px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.salon a{
+  text-decoration: none;
+  color: #000000;
+}
+
+.salon{
+  margin-top: 20px;
+  width: 90%;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.salon img{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.salon p{
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-family: 'Gotham Pro', sans-serif;
+}
+
+.salon p:nth-child(2){
+  margin-top: 20px;
+}
+
+.createRecordForm{
+  width: 90%;
+  max-width: 100%;
+}
+
+.createRecordForm li div{
+  display: flex;
+  flex-direction: column;
+}
+
+.createRecordForm li div div{
+  display: flex;
+  flex-direction: row;
+}
+
+.createRecordForm li div div div{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.createRecordForm li div div div p{
+  font-size: 16px;
+  max-width: 190px;
+  text-overflow: ellipsis;
+}
+
+.createRecordForm button{
+  outline: none;
+  border: none;
+  background-color: #fcd535;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  display: block;
+  padding: 8px 0;
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.createRecordForm label{
+  font-size: 17px;
+}
+
+.calendar{
+  width: 90%;
+  max-width: 400px;
+}
+
+.freeTime{
+  width: 90%;
+  max-width: 400px;
+}
+
+.freeTime button{
+  float: right;
+  outline: none;
+  border: none;
+  background-color: #fcd535;
+  width: 90%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  display: block;
+  padding: 8px 0;
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 14px;
+
+}
+
+.createRecordBtn{
+  margin-top: 30px;
+  margin-bottom: 40px;
+  outline: none;
+  border: none;
+  background-color: #fcd535;
+  width: 90%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  display: block;
+  padding: 8px 0;
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 14px;
+}
