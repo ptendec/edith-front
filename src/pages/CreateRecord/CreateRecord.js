@@ -47,7 +47,16 @@ const CreateRecord = () => {
       .then(data => {
         const busyTime = data
         const filteredArray = graphic.filter(time => busyTime.every(busy => busy.dateId !== time.id))
-        setFreeTime(filteredArray)
+        if (date.getDay() === new Date().getDay()) {
+          console.log("current day")
+          const availableTime = filteredArray.filter(time => {
+            return (new Date().getHours() < Number(time.start_time.split(':')[0]));
+          })
+          setFreeTime(availableTime)
+        }
+        else{
+          setFreeTime(filteredArray)
+        }
         setChosenTime(null)
       })
   }, [date, chosenSpecialist])
