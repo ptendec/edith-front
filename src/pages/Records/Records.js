@@ -50,12 +50,10 @@ const Records = () => {
         }
       }).then(({response, data}) => {
         setSpecialists(data)
-        console.log(specialists)
       })
     }
   }, [salonId])
   useEffect(() => {
-
     if (salonId !== null) {
       fetchIntercept(`/admin/getRecords`, {
         method: 'POST',
@@ -64,11 +62,12 @@ const Records = () => {
         },
         body: JSON.stringify({date, specialistId, salonId}),
       }).then(({response, data}) => {
+        console.log(data)
         setRecords(data)
         console.log(records)
       })
     }
-  }, [date, specialistId])
+  }, [date, specialistId, salonId])
   const cancelRecord = (id) => {
     fetchIntercept(`/admin/cancelRecord`, {
       method: 'DELETE',
@@ -77,8 +76,11 @@ const Records = () => {
       },
       body: JSON.stringify({id})
     }).then(({response, data}) => {
-      if (response.status === 200) setRecords(records.filter(record => record.id !== id));
-
+      if (response.status === 200) {
+        setRecords(records.filter(record => record.id != id))
+        console.log(records)
+        console.log(id)
+      }
     })
   }
   return (
@@ -136,7 +138,7 @@ const Records = () => {
           </tr>
           </thead>
           <tbody>
-          {records.length !== 0 ? records.map(record => (
+          {records?.length !== 0 ? records.map(record => (
               <tr>
                 <td className="relative py-4 pl-4 sm:pl-6 pr-3 text-sm">
                   <div className="font-medium text-gray-900">{record.firstName + ' ' + record.lastName}</div>
@@ -144,7 +146,7 @@ const Records = () => {
                     <span>{record.phoneNumber}</span></div>
                 </td>
                 <td className="px-3 py-3.5 text-sm text-gray-500">
-                  {graphics[record.dateId].start_time + ' - ' + graphics[record.dateId].end_time}
+                  {graphics[record.dateId - 1].start_time + ' - ' + graphics[record.dateId - 1].end_time}
                 </td>
                 <td className="relative py-3.5 pl-3 pr-4 sm:pr-6 text-right text-sm font-medium">
                   <button type="button"

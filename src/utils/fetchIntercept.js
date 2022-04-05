@@ -32,14 +32,12 @@ const customFetcher = async (url, config, type) => {
     ...config['headers'],
     Authorization: `Bearer ${accessToken}`
   }
-  console.log(config)
   let {response, data} = await originalRequest(url, config)
   if (response.status === 401 && response.message === 'Refresh token is empty'){
 
   }
   if(response.status === 401){
     response = await refreshToken(type)
-    console.log(response.accessToken)
     config['headers'] = {
       Authorization: `Bearer ${response.accessToken}`
     }
