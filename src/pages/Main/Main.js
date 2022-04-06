@@ -8,7 +8,7 @@ const Main = () => {
   const [salons, setSalons] = useState([])
   useEffect(() => {
     fetch(`${API_URL}/client/getSalons`, {
-      method: 'GET'
+      method: 'GET',
     }).then(response => response.json())
       .then(data => {
         console.log(data)

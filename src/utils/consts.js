@@ -1,2 +1,2 @@
-export const API_URL = 'http://localhost:5000/api'
-export const FILE_URL = 'http://localhost:5000/'
+export const API_URL = 'https://edith-pern.herokuapp.com/api'
+export const FILE_URL = 'https://edith-pern.herokuapp.com/'
