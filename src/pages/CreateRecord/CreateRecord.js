@@ -62,6 +62,7 @@ const CreateRecord = () => {
   }, [date, chosenSpecialist])
 
   const createRecordHandler = () => {
+    if (chosenTime === null) return false
     const request = {
       firstName,
       lastName,
